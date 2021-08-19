@@ -1,11 +1,11 @@
 # Write a method, least_common_multiple, that takes in two numbers and returns the smallest number that is a mutiple
 # of both of the given numbers
 def least_common_multiple(num_1, num_2)
-    max = [num_1, num_2].max
-    (1...max).each do |i|
-        x = i * max 
-        if x % num_1 == 0 && x % num_2 == 0
-            return x
+   max = [num_1, num_2].max
+    (1..max).each do |i|
+    num = max * i
+        if num % num_1 == 0 && num % num_2 == 0
+            return num
         end
     end
 end
@@ -13,40 +13,20 @@ end
 # Write a method, most_frequent_bigram, that takes in a string and returns the two adjacent letters that appear the
 # most in the string.
 def most_frequent_bigram(str)
-    hash = Hash.new(0)
-        (0...str.length - 1).each do |i|
-            pair = str[i..i + 1]
-            hash[pair] += 1
-        end
-    max_value = hash.values.max
-    hash.each do |k, v|
-        return k if v == max_value
-    end
+    
 end
 
 
 class Hash
     # Write a method, Hash#inverse, that returns a new hash where the key-value pairs are swapped
-    def inverse
-        hash = Hash.new(0)
-        self.each {|k, v| hash[v] = k}
-        hash
-    end
+    
 end
 
 
 class Array
     # Write a method, Array#pair_sum_count, that takes in a target number returns the number of pairs of elements that sum to the given target
     def pair_sum_count(num)
-        count = 0
-       (0...self.length).each do |i|
-        (0...self.length).each do |y|
-            if y > i && self[y] + self[i] == num
-                count += 1
-            end
-        end
-        end
-        count
+       
     end
 
     # Write a method, Array#bubble_sort, that takes in an optional proc argument.
@@ -63,17 +43,6 @@ class Array
     #
     # This should remind you of the spaceship operator! Convenient :)
     def bubble_sort(&prc)
-        prc ||= Proc.new{|a, b| a <=> b}
-        sorted = false
-        while !sorted
-            sorted = true
-            (self.length - 1).times do |i|
-                if prc.call(self[i], self[i + 1]) == 1
-                    self[i], self[i + 1] = self[i + 1], self[i]
-                    sorted = false
-                end
-            end
-        end
-        self
+      
     end
 end
