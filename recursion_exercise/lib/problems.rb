@@ -70,15 +70,16 @@ end
 #
 # Examples:
 # 
-# reverse_string("")            # => ""
-# reverse_string("c")           # => "c"
-# reverse_string("internet")    # => "tenretni"
-# reverse_string("friends")     # => "sdneirf"
+
 def reverse_string(str)
-   
+    return "" if str.empty?
+    return str[-1] + reverse_string(str[0..-2])
 end
 
-
+p reverse_string("")            # => ""
+p reverse_string("c")           # => "c"
+p reverse_string("internet")    # => "tenretni"
+p reverse_string("friends")     # => "sdneirf"
 # A 1-dimensional array is also known as a flattened array.
 # Write a method, flatten(data), that accepts a single argument. The
 # method should take in an array of any dimension and return the flattened
