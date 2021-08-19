@@ -39,12 +39,12 @@ def lucas_number(n)
         return lucas_number(n - 1) + lucas_number(n - 2)
     end
 end
-p lucas_number(0)   # =>    2
-p lucas_number(1)   # =>    1
-p lucas_number(2)   # =>    3
-p lucas_number(3)   # =>    4
-p lucas_number(5)   # =>    11
-p lucas_number(9)   # =>    76
+# p lucas_number(0)   # =>    2
+# p lucas_number(1)   # =>    1
+# p lucas_number(2)   # =>    3
+# p lucas_number(3)   # =>    4
+# p lucas_number(5)   # =>    11
+# p lucas_number(9)   # =>    76
 
 # Write a method, sum_array(array), that takes in an array of numbers.
 # The method should return the total sum of the elements.
@@ -53,14 +53,22 @@ p lucas_number(9)   # =>    76
 #
 # Examples:
 #
-# sum_array([])             # => 0
-# sum_array([5])            # => 5
-# sum_array([5, 2])         # => 7
-# sum_array([4, 10, -1, 2]) # => 15
+
 def sum_array(array)
-
+    resutl = 0
+    if array == []
+        return 0 
+    elsif array.length == 1
+        return array[0]
+    else
+        result = array[0] + sum_array(array[1..-1])
+    end
+    result
 end
-
+p sum_array([])             # => 0
+p sum_array([5])            # => 5
+p sum_array([5, 2])         # => 7
+p sum_array([4, 10, -1, 2]) # => 15
 
 # Write a method, reverse_string(str), that takes in a string.
 # The method should return the string with it's characters in reverse order.
