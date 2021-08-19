@@ -55,20 +55,13 @@ end
 #
 
 def sum_array(array)
-    resutl = 0
-    if array == []
-        return 0 
-    elsif array.length == 1
-        return array[0]
-    else
-        result = array[0] + sum_array(array[1..-1])
-    end
-    result
+    return 0 if array == []
+    return array[0] + sum_array(array[1..-1])
 end
-p sum_array([])             # => 0
-p sum_array([5])            # => 5
-p sum_array([5, 2])         # => 7
-p sum_array([4, 10, -1, 2]) # => 15
+# p sum_array([])             # => 0
+# p sum_array([5])            # => 5
+# p sum_array([5, 2])         # => 7
+# p sum_array([4, 10, -1, 2]) # => 15
 
 # Write a method, reverse_string(str), that takes in a string.
 # The method should return the string with it's characters in reverse order.
