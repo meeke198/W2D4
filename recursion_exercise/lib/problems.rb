@@ -6,17 +6,17 @@
 #
 # Examples:
 #
-# pow(2, 0) # => 1
-# pow(2, 1) # => 2
-# pow(2, 5) # => 32
-# pow(3, 4) # => 81
-# pow(4, 3) # => 64
+
 def pow(base, exponent)
     return 1 if exponent == 0
-    base * pow(base, exponent - 1)
+    result = base * pow(base, exponent - 1)  
 end
 
-
+# p pow(2, 0) # => 1
+# p pow(2, 1) # => 2
+# p pow(2, 5) # => 32
+# p pow(3, 4) # => 81
+# p pow(4, 3) # => 64
 # Write a method, lucas_number(n), that takes in a number.
 # The method should return the n-th number of the Lucas Sequence.
 # The 0-th number of the Lucas Sequence is 2.
@@ -29,22 +29,22 @@ end
 #
 # Examples:
 #
-# lucas_number(0)   # =>    2
-# lucas_number(1)   # =>    1
-# lucas_number(2)   # =>    3
-# lucas_number(3)   # =>    4
-# lucas_number(5)   # =>    11
-# lucas_number(9)   # =>    76
+# 
 def lucas_number(n)
-    if n == 0 
+    if n == 0
         return 2 
     elsif n == 1
-        return 1
+        return 1 
     else
         return lucas_number(n - 1) + lucas_number(n - 2)
     end
 end
-
+p lucas_number(0)   # =>    2
+p lucas_number(1)   # =>    1
+p lucas_number(2)   # =>    3
+p lucas_number(3)   # =>    4
+p lucas_number(5)   # =>    11
+p lucas_number(9)   # =>    76
 
 # Write a method, sum_array(array), that takes in an array of numbers.
 # The method should return the total sum of the elements.
@@ -58,8 +58,7 @@ end
 # sum_array([5, 2])         # => 7
 # sum_array([4, 10, -1, 2]) # => 15
 def sum_array(array)
-    return 0 if array.empty?
-    return array[0] + sum_array(array[1..- 1])
+
 end
 
 
@@ -75,13 +74,7 @@ end
 # reverse_string("internet")    # => "tenretni"
 # reverse_string("friends")     # => "sdneirf"
 def reverse_string(str)
-    if str.empty?
-        return ""
-    elsif str.length == 1
-        return str
-    else
-        return str[-1] + reverse_string(str[0..-2])
-    end
+   
 end
 
 
@@ -113,21 +106,12 @@ end
 #     1-dimensional array: ['some data']
 #     2-dimensional array: [['some data']]
 #     3-dimensional array: [[['some data']]]
-def flatten(data, results = [])
-    if data.class != Array
-        return [data]
-    end
-    data.each do |ele|
-        if ele.class == Array
-            flatten(ele, results)
-        else
-            results << ele
-        end
-    end
-    results
+def flatten(data)
+
 end
 
-array_1 = [1, 2, [[3, 4], [5, [6]]], [7, 8]]
-p flatten(array_1)
-array_2 = ['this', ['problem', 'is'], [['pretty', 'tough'], [[':)']]]]
-p flatten(array_2)
+
+# array_1 = [1, 2, [[3, 4], [5, [6]]], [7, 8]]
+# p flatten(array_1)
+# array_2 = ['this', ['problem', 'is'], [['pretty', 'tough'], [[':)']]]]
+# p flatten(array_2)
